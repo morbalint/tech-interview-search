@@ -11,10 +11,13 @@
 ## Excuses
 
 * not counting clicks on movies because the spec states "rank documents" (maybe added later)
+  * so movies are not clickable because this is not a UX exercise
 * cheating by moving the movie search to the bottom of the results, so we don't need to wait for the slow API
-* pagination is not perfect, when concurrent users raise a document by clicking
+* pagination is not perfect, when concurrent users raise a document in rank by clicking, pagination can skip that document or a show another document twice  
 
 * please excuse the blatant security issues such as:
-  * outdated node package
-  * CORS set to '*'
-* please excuse the use of raw html style 
+  * no HTTPS
+  * outdated node package (potentially)
+  * CORS Allow Origin set to '*'
+  * user input sanitization
+* please excuse the use of raw html style, no time for UX 
