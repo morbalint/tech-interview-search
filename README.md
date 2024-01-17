@@ -4,7 +4,8 @@
 
 1. install node 20.4.0 (e.g. use `asdf`)
 1. install yarn (e.g. `corepack enable`)
-1. start backend: `cd backend && yarn start`
+1. extract the sample dataset into the `backend/dist/` directory 
+1. start backend: `cd backend && OMDBAPIKEY=<your-omdb-api-key> yarn dev`
 1. start frontend: `cd frontend && yarn start`
 
 ## Excuses

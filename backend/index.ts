@@ -1,33 +1,11 @@
-import express from "express"
+import {BootstrapApp} from "./app";
 
-const app = express();
-
-const omdbApiKey = process.env.OMDBAPIKEY
-
-const sampleData = {data: [
-        "foo",
-        "bar",
-        "Hello",
-        "World",
-        "!"
-    ]}
-
-app.get('/search', async (req, res) => {
-    const searchTerm = (req.query as {q: string}).q as string
-
-    res.setHeader('Access-Control-Allow-Origin', '*')
-
-    const movies = fetch(`http://www.omdbapi.com/?t=${searchTerm}&apikey=${omdbApiKey}`)
-
-    const movieResponse = await (await movies).json() as {Title: string | undefined}
-    if (movieResponse.Title != null) {
-        res.send({data: [`MOVIE: ${movieResponse.Title}`]})
+BootstrapApp().then(app => {
+    if (app) {
+        const port = process.env.PORT || 3001;
+        app.listen(port, () => console.log(`App listening on PORT ${port}`));
     }
     else {
-        res.send(sampleData)
+        console.error("Failed to bootstrap the app!")
     }
-});
-
-const port = process.env.PORT || 3001;
-
-app.listen(port, () => console.log(`App listening on PORT ${port}`));
+}).catch(err => console.error(err))
