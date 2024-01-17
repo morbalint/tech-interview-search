@@ -1,12 +1,12 @@
 import express from "express";
 import {Str2PositiveUIntSafe} from "./helpers";
-import {loadTextDataSet, prep4search, wordifyDataSet} from "./bootstrap";
+import {loadDataSet, prep4search, wordifyDataSet} from "./bootstrap";
 import {SearchBuilder} from "./search";
 
 export async function BootstrapApp() {
     const app = express();
 
-    const dataset = await loadTextDataSet();
+    const dataset = await loadDataSet();
     if (!dataset || Object.keys(dataset).length === 0) {
         console.error("Failed to load dataset!")
         return;

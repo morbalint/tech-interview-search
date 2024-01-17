@@ -24,9 +24,9 @@ export function wordifyDataSet(fileData: FileData): WordifiedDataset {
 }
 
 
-export async function loadTextDataSet() {
+export async function loadDataSet() {
     const fileData = Object.create(null as (object | null)) as FileData // Jetbrains built in typechecker is stupid
-    const basicTextDir = './dist/datasets/space/'
+    const basicTextDir = './datasets/space/'
     const files = await fs.readdir(basicTextDir)
     if (files.length === 0) {
         console.error(`Error reading directory: ${basicTextDir}`)
