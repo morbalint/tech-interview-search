@@ -2,8 +2,17 @@ import express from "express"
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hi!')
+const sampleData = {data: [
+        "foo",
+        "bar",
+        "Hello",
+        "World",
+        "!"
+    ]}
+
+app.get('/search', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.send(sampleData)
 });
 
 const port = process.env.PORT || 3001;

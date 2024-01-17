@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "private": "true",
   "main": "dist/index.js",
   "repository": "https://github.com/morbalint/tech-interview-search.git",
   "author": "morbalint",
