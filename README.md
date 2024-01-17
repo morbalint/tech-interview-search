@@ -10,6 +10,10 @@
 
 ## Excuses
 
+* not counting clicks on movies because the spec states "rank documents" (maybe added later)
+* cheating by moving the movie search to the bottom of the results, so we don't need to wait for the slow API
+* pagination is not perfect, when concurrent users raise a document by clicking
+
 * please excuse the blatant security issues such as:
   * outdated node package
   * CORS set to '*'
